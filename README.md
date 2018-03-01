@@ -21,34 +21,39 @@ http://www.installerunserveur.com/
 
 # installations des paquets
 
+```bash
 apt-get install bind9 bind9utils bind9-doc dnsutils isc-dhcp-server git
+```
 
 # For eth0 with dhcp:
 
 # The loopback network interface
-auto lo eth0
-iface lo inet loopback
+`auto lo eth0`
+`iface lo inet loopback`
 
 # The primary network interface
-iface eth0 inet dhcp
-For eth0 static:
+`iface eth0 inet dhcp
+For eth0 static:`
 
 # The loopback network interface
-auto lo eth0
-iface lo inet loopback
+`auto lo eth0
+iface lo inet loopback`
 
 # The primary network interface
-iface eth0 inet static
+```iface eth0 inet static
     address 192.168.10.33
     netmask 255.255.255.0
     broadcast 192.168.10.255
     network 192.168.10.0
     gateway 192.168.10.254 
-dns-nameservers 192.168.10.254
+dns-nameservers 192.168.10.254```
 
 # commandes en vrac
 
+```
 dhclient ens33
 ifup ens33
 ifdown ens33
 ifconfig eth0
+```
+
