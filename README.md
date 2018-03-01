@@ -19,10 +19,10 @@ https://github.com/shad0wuser
 
 http://www.installerunserveur.com/
 
-# installations des paquets
+# installations des paquets bind9 (dns) / isc-dhcp / terminator (split console)
 
 ```bash
-apt-get install bind9 bind9utils bind9-doc dnsutils isc-dhcp-server git
+apt-get install bind9 bind9utils bind9-doc dnsutils isc-dhcp-server git terminator
 ```
 
 # For eth0 with dhcp:
@@ -46,12 +46,11 @@ iface lo inet loopback`
     broadcast 192.168.10.255
     network 192.168.10.0
     gateway 192.168.10.254 
-dns-nameservers 192.168.10.254
-```
+dns-nameservers 192.168.10.254```
 
 # commandes en vrac
 
-```bash
+```
 dhclient ens33
 ifup ens33
 ifdown ens33
