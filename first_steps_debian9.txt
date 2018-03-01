@@ -1,7 +1,8 @@
 # installation debian (ici Debian 9 « Stretch »)
-# maj des sources (/etc/apt/sources.list)
+# maj des sources
+# https://wiki.debian.org/fr/SourcesList
 
-https://wiki.debian.org/fr/SourcesList
+`nano /etc/apt/sources.list`
 
 ```
 deb http://deb.debian.org/debian stretch main
