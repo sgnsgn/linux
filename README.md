@@ -46,11 +46,12 @@ iface lo inet loopback`
     broadcast 192.168.10.255
     network 192.168.10.0
     gateway 192.168.10.254 
-dns-nameservers 192.168.10.254```
+dns-nameservers 192.168.10.254
+```
 
 # commandes en vrac
 
-```
+```bash
 dhclient ens33
 ifup ens33
 ifdown ens33
