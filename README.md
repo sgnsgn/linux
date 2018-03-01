@@ -1,12 +1,21 @@
-# liste des sources utilisées : #
+# bind9 (DNS) #
 
-http://powtos.fr/1003-mise-en-place-bind9-debian-7/
+http://powtos.fr/1003-mise-en-place-bind9-debian-7/ \n
+https://www.supinfo.com/articles/single/1709-mise-place-serveur-dns-avec-bind9 \n
+https://www.supinfo.com/articles/single/1714-mise-place-serveurs-dns-maitre-esclave-avec-bind9 \n
+https://www.supinfo.com/articles/single/1715-dynamic-dns-avec-bind9-isc-dhcp-server \n
 
-https://www.supinfo.com/articles/single/1709-mise-place-serveur-dns-avec-bind9
+# dhcp #
 
-https://www.supinfo.com/articles/single/1714-mise-place-serveurs-dns-maitre-esclave-avec-bind9
+https://openclassrooms.com/courses/mise-en-place-d-un-serveur-dhcp-sous-linux
+
+# divers #
 
 https://github.com/shad0wuser
+
+http://www.installerunserveur.com/
+
+
 
 echo "installation des paquets"
 
@@ -43,5 +52,7 @@ dhcllient ens33
 
 ifup ens33
 ifdown ens33
+
+ifconfig eth0
 
 
