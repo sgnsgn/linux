@@ -1,31 +1,46 @@
-# Dynamic DNS and DHCP (bind9 & isc-dhcp-server)
-Copy/Modify the configuration files
-```bash
-apt update
-apt install bind9 isc-dhcp-server git
-git clone https://github.com/shad0wuser/ddns_dhcp.git
+# foortoo
 
-cp -r ddns_dhcp/dhcp /etc/
-cp -r ddns_dhcp/bind /etc/
-
-cp -r ddns_dhcp/etc/* /etc/
-
-chown -R bind:bind /etc/bind
-```
+# ### liste des sources utilisées : ###
+# http://powtos.fr/1003-mise-en-place-bind9-debian-7/ 
+# https://www.supinfo.com/articles/single/1709-mise-place-serveur-dns-avec-bind9
+# https://www.supinfo.com/articles/single/1714-mise-place-serveurs-dns-maitre-esclave-avec-bind9
+# https://github.com/shad0wuser
 
 
-## Generating the key to secure DNS / DHCP exchanges
+echo "installation des paquets"
 
-Generate your secret key.
-```bash
-dnssec-keygen -a HMAC-MD5 -b 128 -r /dev/urandom -n USER DDNS_UPDATE
-```
-It will generate two key files. Just copy the **key** in `Kddns_update.+157+57083.private` and paste to **secret** case on `ddns.key` file.
+apt-get install bind9 bind9utils bind9-doc dnsutils isc-dhcp-server git
 
-The both files `/etc/bind/ddns.key` and `/etc/dhcp/ddns.key` must be identical.
+echo "édition du fichier des interfaces réseau pour config l'IP en static"
 
-## Change configuration files, replace with your values and run
-```bash
-services bind9 restart
-service isc-dhcp-server restart
-```
+nano /etc/network/interfaces
+
+# For eth0 with dhcp:
+
+# # The loopback network interface
+# auto lo eth0
+# iface lo inet loopback
+
+# # The primary network interface
+# iface eth0 inet dhcp
+# For eth0 static:
+
+# # The loopback network interface
+# auto lo eth0
+# iface lo inet loopback
+
+# # The primary network interface
+# iface eth0 inet static
+    # address 192.168.10.33
+    # netmask 255.255.255.0
+    # broadcast 192.168.10.255
+    # network 192.168.10.0
+    # gateway 192.168.10.254 
+# dns-nameservers 192.168.10.254
+
+dhcllient ens33
+
+ifup ens33
+ifdown ens33
+
+
