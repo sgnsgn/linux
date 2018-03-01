@@ -1,11 +1,8 @@
-# foortoo
-
-# ### liste des sources utilisées : ###
-# http://powtos.fr/1003-mise-en-place-bind9-debian-7/ 
-# https://www.supinfo.com/articles/single/1709-mise-place-serveur-dns-avec-bind9
-# https://www.supinfo.com/articles/single/1714-mise-place-serveurs-dns-maitre-esclave-avec-bind9
-# https://github.com/shad0wuser
-
+# liste des sources utilisées : #
+http://powtos.fr/1003-mise-en-place-bind9-debian-7/ 
+https://www.supinfo.com/articles/single/1709-mise-place-serveur-dns-avec-bind9
+https://www.supinfo.com/articles/single/1714-mise-place-serveurs-dns-maitre-esclave-avec-bind9
+https://github.com/shad0wuser
 
 echo "installation des paquets"
 
@@ -15,28 +12,28 @@ echo "édition du fichier des interfaces réseau pour config l'IP en static"
 
 nano /etc/network/interfaces
 
-# For eth0 with dhcp:
+For eth0 with dhcp:
 
-# # The loopback network interface
-# auto lo eth0
-# iface lo inet loopback
+# The loopback network interface
+auto lo eth0
+iface lo inet loopback
 
-# # The primary network interface
-# iface eth0 inet dhcp
-# For eth0 static:
+# The primary network interface
+iface eth0 inet dhcp
+For eth0 static:
 
-# # The loopback network interface
-# auto lo eth0
-# iface lo inet loopback
+# The loopback network interface
+auto lo eth0
+iface lo inet loopback
 
-# # The primary network interface
-# iface eth0 inet static
-    # address 192.168.10.33
-    # netmask 255.255.255.0
-    # broadcast 192.168.10.255
-    # network 192.168.10.0
-    # gateway 192.168.10.254 
-# dns-nameservers 192.168.10.254
+# The primary network interface
+iface eth0 inet static
+    address 192.168.10.33
+    netmask 255.255.255.0
+    broadcast 192.168.10.255
+    network 192.168.10.0
+    gateway 192.168.10.254 
+dns-nameservers 192.168.10.254
 
 dhcllient ens33
 
