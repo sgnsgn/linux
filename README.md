@@ -1,7 +1,11 @@
 # liste des sources utilisées : #
-http://powtos.fr/1003-mise-en-place-bind9-debian-7/ 
+
+http://powtos.fr/1003-mise-en-place-bind9-debian-7/
+
 https://www.supinfo.com/articles/single/1709-mise-place-serveur-dns-avec-bind9
+
 https://www.supinfo.com/articles/single/1714-mise-place-serveurs-dns-maitre-esclave-avec-bind9
+
 https://github.com/shad0wuser
 
 echo "installation des paquets"
