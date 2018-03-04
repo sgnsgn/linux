@@ -56,5 +56,14 @@ dhclient ens33
 ifup ens33
 ifdown ens33
 ifconfig eth0
+nslookup @IP ou www.xxx.xxx
+dpkg -l | grep bind
+dpkg-reconfigure bind
+/etc/init.d/networking restart (redemarrer interfaces)
 ```
-
+# tips
+```
+esc puis d ; supprimer 1er mot jusqu'a l'espace suivant
+Si on fait less, en pressant 'v' on passe directement en mode édition
+ctrl + t -> inversion de lettres
+```
